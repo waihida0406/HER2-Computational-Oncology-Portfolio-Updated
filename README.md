@@ -37,7 +37,7 @@ Projects
 | 02_ADMET_Analysis | ADMET screening of phytochemicals | Completed |
 | 03_Molecular_Docking | Docking against HER2 |Completed |
 | 04_Molecular_Dynamics | 100 ns MD simulation | Completed|
-| 05_RNASeq_Galaxy | RNA-Seq analysis using Galaxy | 🟡 In Progress |
+| 05_RNASeq_Galaxy | RNA-Seq analysis using Galaxy | Completed |
 | 06_Functional_Enrichment | GO & KEGG pathway analysis | Completed |
 
 ---
