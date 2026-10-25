@@ -38,10 +38,11 @@ The work was carried out during my bioinformatics internship at **BioNome** (May
 <summary><b>💊 Drug Discovery (click to expand/collapse)</b></summary>
 <br/>
 
-- **Molecular Docking**: virtual screening of 14 phytochemicals against HER2 using PyRx
+- **Protein Preparation**: HER2 structure cleaned and prepared for docking
 - **ADMET Profiling**: drug-likeness and pharmacokinetics evaluated with SwissADME
+- **Molecular Docking**: virtual screening of 14 phytochemicals against HER2 using PyRx
 - **Shortlisting**: top 5 candidates selected on binding affinity and ADMET properties
-- **Molecular Dynamics**: 100 ns GROMACS simulation of the HER2–ligand complex to assess stability
+- **Molecular Dynamics**: 100 ns GROMACS simulation with RMSD, RMSF, radius of gyration and SASA analysis
 
 </details>
 
@@ -49,7 +50,7 @@ The work was carried out during my bioinformatics internship at **BioNome** (May
 <summary><b>🧪 Transcriptomics (click to expand)</b></summary>
 <br/>
 
-- **Quality Control**: FastQC assessment across 9 quality metrics
+- **Quality Control**: FastQC assessment across 9 quality metrics, before and after trimming
 - **Alignment**: reads mapped to the human reference genome (hg38) with HISAT2
 - **Functional Enrichment**: GO and KEGG pathway analysis
 
@@ -107,25 +108,40 @@ flowchart LR
 
 </div>
 
-<!-- Upload your figures to a "results" folder and keep the file names below the same, or change them to match. -->
-
 <details open>
 <summary><b>🖼️ Figures (click to expand/collapse)</b></summary>
 <br/>
 
+<h3 align="center">⚛️ Molecular Dynamics (100 ns)</h3>
 <p align="center">
-  <img src="results/docking_pose.png" width="45%" alt="Docking pose" />
-  <img src="results/rmsd.png" width="45%" alt="RMSD plot" />
+  <img src="04_Molecular_Dynamics/images/rmsd.png" width="45%" alt="RMSD" />
+  <img src="04_Molecular_Dynamics/images/rmsf.png" width="45%" alt="RMSF" />
 </p>
 <p align="center">
-  <img src="results/rmsf.png" width="45%" alt="RMSF plot" />
-  <img src="results/kegg_enrichment.png" width="45%" alt="KEGG enrichment" />
+  <img src="04_Molecular_Dynamics/images/rg.png" width="45%" alt="Radius of gyration" />
+  <img src="04_Molecular_Dynamics/images/sasa.png" width="45%" alt="SASA" />
+</p>
+
+<h3 align="center">🧪 RNA-seq Quality Control & Alignment</h3>
+<p align="center">
+  <img src="05_RNASeq_Galaxy/02_fastqc_summary.png" width="45%" alt="FastQC summary" />
+  <img src="05_RNASeq_Galaxy/04_per_base_sequence_quality.png" width="45%" alt="Per base sequence quality" />
+</p>
+<p align="center">
+  <img src="05_RNASeq_Galaxy/12_post_trim_FastQC_summary.png" width="45%" alt="Post-trim FastQC summary" />
+  <img src="05_RNASeq_Galaxy/15_HISAT2_hg38_alignment.png" width="45%" alt="HISAT2 hg38 alignment" />
+</p>
+
+<h3 align="center">🧬 Functional Enrichment</h3>
+<p align="center">
+  <img src="06_Functional_Enrichment/go_bp_barplot.png" width="45%" alt="GO Biological Process" />
+  <img src="06_Functional_Enrichment/kegg_barplot.png" width="45%" alt="KEGG pathways" />
 </p>
 
 </details>
 
 > [!TIP]
-> Start with the `results/` folder for a quick look at the key findings.
+> Each numbered folder has its own README explaining that step of the pipeline.
 
 <p align="right"><a href="#-her2-computational-oncology-portfolio">⬆ Back to top</a></p>
 
@@ -133,19 +149,19 @@ flowchart LR
 
 ## 📁 Project Structure
 
-<!-- Edit the folder names below to match the folders actually in this repo. -->
-
 <details>
 <summary><b>📂 View folder layout (click to expand)</b></summary>
 <br/>
 
 ```
 HER2-Computational-Oncology-Portfolio-Updated/
-├── docking/          # Ligand files, PyRx outputs, binding scores
-├── admet/            # SwissADME results
-├── md_simulation/    # GROMACS inputs and analysis plots
-├── rna_seq/          # FastQC reports, alignment stats, enrichment results
-├── results/          # Final figures and tables
+├── 01_Protein_Preparation/      # HER2 structure preparation
+├── 02_ADMET_Analysis/           # SwissADME drug-likeness results
+├── 03_Molecular_Docking/        # PyRx docking of 14 phytochemicals
+├── 04_Molecular_Dynamics/       # 100 ns GROMACS simulation
+│   └── images/                  # RMSD, RMSF, Rg and SASA plots
+├── 05_RNASeq_Galaxy/            # FastQC reports and HISAT2 alignment
+├── 06_Functional_Enrichment/    # GO and KEGG enrichment results
 └── README.md
 ```
 
@@ -171,12 +187,12 @@ cd HER2-Computational-Oncology-Portfolio-Updated
 
 ## 🗺️ Roadmap
 
-<!-- Add only the next steps you actually plan, as unticked "- [ ]" lines. -->
-
-- [x] Molecular docking of 14 phytochemicals
-- [x] ADMET profiling and shortlisting of 5 candidates
+- [x] HER2 protein preparation
+- [x] ADMET profiling with SwissADME
+- [x] Molecular docking of 14 phytochemicals and shortlisting of 5 candidates
 - [x] 100 ns molecular dynamics simulation
-- [x] RNA-seq alignment and GO/KEGG enrichment
+- [x] RNA-seq quality control and hg38 alignment
+- [x] GO and KEGG functional enrichment
 
 <p align="right"><a href="#-her2-computational-oncology-portfolio">⬆ Back to top</a></p>
 
@@ -195,4 +211,3 @@ MSc Biotechnology · SRM Institute of Science and Technology, Chennai
 ⭐ *If you find this project useful, consider giving it a star!*
 
 </div>
-
